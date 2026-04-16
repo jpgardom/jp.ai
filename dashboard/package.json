@@ -1,0 +1,33 @@
+{
+  "name": "venture-os-dashboard",
+  "version": "0.1.0",
+  "type": "module",
+  "bin": {
+    "venture-os": "./dist/bin/venture-os.js"
+  },
+  "scripts": {
+    "dev": "npm run build:frontend && tsx bin/venture-os.ts",
+    "dev:hmr": "tsx bin/venture-os.ts & cd frontend && npx vite --host 0.0.0.0",
+    "dev:frontend": "cd frontend && npm run dev",
+    "build:frontend": "cd frontend && npm run build",
+    "build": "npm run build:frontend && tsc",
+    "start": "node dist/bin/venture-os.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/claude-agent-sdk": "^0.2.105",
+    "@types/pg": "^8.20.0",
+    "chokidar": "^5.0.0",
+    "express": "^5.2.1",
+    "pg": "^8.20.0",
+    "snowflake-sdk": "^2.4.0",
+    "ws": "^8.20.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.6.0",
+    "@types/snowflake-sdk": "^1.6.24",
+    "@types/ws": "^8.18.1",
+    "tsx": "^4.21.0",
+    "typescript": "^6.0.2"
+  }
+}
